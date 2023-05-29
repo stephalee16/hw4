@@ -2,7 +2,15 @@
 
 <%= form_with :url => "/sessions" do |form| %>
   
-  <p>
-    <%= form.submit "Login" %>
-  </p>
+  <div class="mb-3">
+    <%= form.label "username", class: "form-label" %>
+    <%= form.text_field "username", class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label "password", class: "form-label" %>
+    <%= form.password_field "password", class: "form-control" %>
+  </div>
+
+ <%= form.submit "Login", class: "btn btn-primary" %>
 <% end %>

@@ -1,11 +1,17 @@
 <h1>New Place</h1>
-
+<% if @current_user %>
 <%= form_with :model => @place do |form| %>
-  <p>
+  <div class="mb-3">
     <%= form.label "name" %>
     <%= form.text_field "name" %>
-  </p>
+  </div>
+
   <p>
-    <%= form.submit %>
+    <%= form.submit "Create Place", class: "btn btn-primary"%>
   </p>
+<% end %>
+<% else %>
+
+  You must first <a href="/login">login</a> to post.
+
 <% end %>
