@@ -1,5 +1,6 @@
 <h1 class="display-1"><%= @place["name"] %></h1>
 
+<% if @current_user %>
 <p>
   <a class= "btn btn-primary btn-lg" href="/posts/new?place_id=<%= @place["id"] %>">New Post</a>
 </p>
@@ -14,6 +15,7 @@
 <% end %>
 </div>
 
+<% end %>
 
 <p>
   <a class= "btn btn-primary" href="/places">Back to All Places</a>
