@@ -2,7 +2,7 @@
 
 <% if @current_user %>
 <p>
-  <a class= "btn btn-primary btn-lg" href="/posts/new?place_id=<%= @place["id"] %>">New Post</a>
+  <a class= "btn  my-4 btn-primary btn-lg" href="/posts/new?place_id=<%= @place["id"] %>">New Post</a>
 </p>
 <div class="container overflow-hidden px-4">
 <div class="row gy-5">
@@ -10,6 +10,11 @@
 <div class="col-lg-4">
   <h3><%= post["title"] %></h3>
   <h4><%= post["posted_on"] %></h4>
+  
+  <% if post.uploaded_image.attached? %>
+    <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
+  <% end %>
+
   <p><%= post["description"] %></p>
 </div>
 <% end %>
@@ -19,6 +24,6 @@
 </div>
 
 <p>
-  <a class= "btn btn-primary" href="/places">Back to All Places</a>
+  <a class= "btn my-4 btn-primary" href="/places">Back to All Places</a>
 </p>
 
